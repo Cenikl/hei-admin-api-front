@@ -5,10 +5,12 @@ import Pagination from '../../components/pagination/Pagination'
 import Button from '../../components/button/Button';
 import { useDataProvider } from '../../context/ApiContext';
 import { userType, eventParticipant } from '../../type/TypeUtils';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {}
 
 const EventParticipant: React.FC = (props: Props) => {
+    const navigate = useNavigate();
     const { client, allUser, idEventChoose } = useDataProvider();
     const [participantList, setParticipantList] = useState<eventParticipant[] | null>([{
         "event":{
@@ -50,10 +52,13 @@ const EventParticipant: React.FC = (props: Props) => {
         getParticipant()
     }, [idEventChoose])
 
+    const returnEvent = () => {
+        navigate("/landing")
+    }
+
     return (
         <div className='eventp__container'>
-            <Button title='Retour'/>
-            <Button title='Confirmer'/>
+            <Button title='Retour' onClickButton={returnEvent} bgColor="goldenrod"/>
             <Modal title='Détail des participants'
                 isActive={showParticipantDetails}
                 handleModal={handleDetails}/>

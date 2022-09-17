@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom'
 import { useDataProvider } from '../../context/ApiContext'
 
 const PageEvent: FC<Partial<eventPropType>> = (props) => {
-    const { idEventChoose } = useDataProvider()
     const {type, element} = props
     const [showDetails, setShowDetails] = useState<boolean>(false);
     const [index, setIndex] = useState<number>(0)
@@ -32,32 +31,32 @@ const PageEvent: FC<Partial<eventPropType>> = (props) => {
                 >
                 <div>
                     <div className='details__element'>
-                      <div className='details__key'>Titre</div>
-                      <div>{(element! && element[index].title)}</div>
+                        <div className='details__key'>Titre</div>
+                        <div>{(element! && element[index].title)}</div>
                     </div>
                     <div className='details__element'>
-                      <div className='details__key'>Description</div>
-                      <div>{(element! && element[index].description)}</div>
+                        <div className='details__key'>Description</div>
+                        <div>{(element! && element[index].description)}</div>
                     </div>
                     <div className='details__element'>
-                      <div className='details__key'>Date début</div>
-                      <div>{(element! && element[index].start_event_datetime)}</div>
+                        <div className='details__key'>Date début</div>
+                        <div>{(element! && element[index].start_event_datetime)}</div>
                     </div>
                     <div className='details__element'>
-                      <div className='details__key'>Date fin</div>
-                      <div>{(element! && element[index].end_event_datetime)}</div>
+                        <div className='details__key'>Date fin</div>
+                        <div>{(element! && element[index].end_event_datetime)}</div>
                     </div>
                     <div className='details__element'>
-                      <div className='details__key'>place</div>
-                      <div>{(element! && element[index].place)}</div>
+                        <div className='details__key'>place</div>
+                        <div>{(element! && element[index].place)}</div>
                     </div>
                     <div className='details__element'>
-                      <div className='details__key'>Superviseur</div>
-                      <div>{(element! && element[index].supervisor)}</div>
+                        <div className='details__key'>Superviseur</div>
+                        <div>{(element! && element[index].supervisor)}</div>
                     </div>
                     <div className='details__element'>
-                      <div className='details__key'>Status</div>
-                      <div>{(element! && element[index].status)}</div>
+                        <div className='details__key'>Status</div>
+                        <div>{(element! && element[index].status)}</div>
                     </div>
                     <Button title='Participant' onClickButton={viewParticipant}/>
                     <Button title='Présence' onClickButton={goPresence}/>

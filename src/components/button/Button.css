@@ -17,7 +17,7 @@
     align-self: flex-start;
     cursor: pointex r;
     background-color: #0e1e53;
-    color: #ffeba7;
+    color: black;
     box-shadow: 0 12px 35px 0 rgba(16,39,112,.25);
     margin: 5px;
     cursor: pointer;
@@ -34,4 +34,5 @@
 .presence__confirm{
     display: flex;
     flex-direction: row;
+    color: goldenrod;
 }
