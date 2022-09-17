@@ -5,6 +5,7 @@ import { userType } from '../type/TypeUtils';
 
     const DataContext = createContext<GlobalContent>({
         userRole: '', 
+        getUserRole: (value:string)=>{},
         client: axios.create(),
         allUser: [],
         idEventChoose: 0,
@@ -16,7 +17,7 @@ import { userType } from '../type/TypeUtils';
     export const DataProvider = ({ children }: any) => {
         const [allUser, setAllUser] = useState<userType[] | null>(null);
         const [idEventChoose, setIdEventChoose] = useState<number>(0)
-        const userRole = "MANAGER";
+        const [userRole, setUserRole] = useState<string>("MANAGER");
         const client:AxiosInstance = axios.create({
             baseURL: "http://localhost:8080"
         })
@@ -24,6 +25,9 @@ import { userType } from '../type/TypeUtils';
             client!.get("/users").then((response)=>{
                 setAllUser(response.data)
             })
+        }
+        const getUserRole = (value: string) =>{
+            setUserRole(value);
         }
         const changeIdEventChoose = (value: number) => {
             setIdEventChoose(value)
@@ -34,7 +38,8 @@ import { userType } from '../type/TypeUtils';
             allUser,
             getUsers,
             idEventChoose,
-            changeIdEventChoose
+            changeIdEventChoose,
+            getUserRole
         };
 
         return (

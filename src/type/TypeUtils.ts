@@ -3,6 +3,7 @@ import { HTMLInputTypeAttribute } from "react"
 
 export type GlobalContent = {
     userRole?: string,
+    getUserRole: (value:string)=>void,
     client?: AxiosInstance,
     allUser?: userType[] | null,
     getUsers?: (value: string) => void,
