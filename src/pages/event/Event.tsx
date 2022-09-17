@@ -29,21 +29,13 @@ function Event() {
    
     const mock = [{title:"Hackathon", description: "ok pour hackathon", idEvent:"EVT",
      place:"HEI Ivandry", start_event_datetime:"31 Août 2022", end_event_datetime:"08:00 - 17:00", supervisor: "toky", status:"Missing",image:Hackathon},
-     {title:"Hackathon", description: "ok pour hackathon",idEvent:"EVT",
+     {title:"Hackathon", description: "ok pour hackathon", idEvent:"EVT",
      place:"HEI Ivandry", start_event_datetime:"31 Août 2022", end_event_datetime:"08:00 - 17:00", supervisor: "toky", status:"Missing",image:Hackathon},
-     {title:"Hackathon", description: "ok pour hackathon",idEvent:"EVT",
+     {title:"Hackathon", description: "ok pour hackathon", idEvent:"EVT",
      place:"HEI Ivandry", start_event_datetime:"31 Août 2022", end_event_datetime:"08:00 - 17:00", supervisor: "toky", status:"Missing",image:Hackathon},
-     {title:"Hackathon", description: "ok pour hackathon",idEvent:"EVT",
+     {title:"Hackathon", description: "ok pour hackathon", idEvent:"EVT",
      place:"HEI Ivandry", start_event_datetime:"31 Août 2022", end_event_datetime:"08:00 - 17:00", supervisor: "toky", status:"Missing",image:Hackathon},
-     {title:"Hackathon", description: "ok pour hackathon",idEvent:"EVT",
-     place:"HEI Ivandry", start_event_datetime:"31 Août 2022", end_event_datetime:"08:00 - 17:00", supervisor: "toky", status:"Missing",image:Hackathon},
-     {title:"Hackathon", description: "ok pour hackathon",idEvent:"EVT",
-     place:"HEI Ivandry", start_event_datetime:"31 Août 2022", end_event_datetime:"08:00 - 17:00", supervisor: "toky", status:"Missing",image:Hackathon},
-     {title:"Hackathon", description: "ok pour hackathon",idEvent:"EVT",
-     place:"HEI Ivandry", start_event_datetime:"31 Août 2022", end_event_datetime:"08:00 - 17:00", supervisor: "toky", status:"Missing",image:Hackathon},
-     {title:"Hackathon", description: "ok pour hackathon",idEvent:"EVT",
-     place:"HEI Ivandry", start_event_datetime:"31 Août 2022", end_event_datetime:"08:00 - 17:00", supervisor: "toky", status:"Missing",image:Hackathon},
-     {title:"Hackathon", description: "ok pour hackathon",idEvent:"EVT",
+     {title:"Hackathon", description: "ok pour hackathon", idEvent:"EVT",
      place:"HEI Ivandry", start_event_datetime:"31 Août 2022", end_event_datetime:"08:00 - 17:00", supervisor: "toky", status:"Missing",image:Hackathon}]
 
 

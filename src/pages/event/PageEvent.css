@@ -22,6 +22,16 @@
 .click{
     cursor: pointer;
 }
+.details__element{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.details__key{
+    font-weight: bold;
+}
 .event__button{
     display: flex;
     flex-direction: row;

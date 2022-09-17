@@ -23,6 +23,10 @@ canvas{
     justify-content: center;
     flex-wrap: wrap;
 }
+.image__result{
+    width: 200px;
+    height: 180px;
+}
 .face__confirm{
     outline: unset;
     border: 0.5px solid red;

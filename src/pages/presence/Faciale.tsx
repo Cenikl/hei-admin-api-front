@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import Button from '../../components/button/Button';
 import Modal from '../../components/modal/Modal';
+import { useDataProvider } from '../../context/ApiContext';
 import './Faciale.css'
 
 function Faciale() {
-    const [photo, setPhoto] = useState<string>("")/* ity le alefa any @ back*/ 
+    const { client } = useDataProvider();
+    const [photo, setPhoto] = useState<string>("")
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const photoRef = useRef<HTMLCanvasElement | null>(null);
     const [confirm, setConfirm] = useState<boolean>(false);
@@ -24,6 +26,13 @@ function Faciale() {
                 let video = videoRef.current;
                 video!.srcObject = stream;
                 {video? video!.play().catch((err)=>console.log(err)):""}
+            })
+    }
+
+    const goPresence = () => {
+        client!.post("/presence",photo)
+            .then(()=>{
+
             })
     }
 
@@ -59,7 +68,7 @@ function Faciale() {
             <video ref={videoRef} className="face__camera"/>
             <canvas ref={photoRef} style={{ display:'none'}}/>
             <div className='face__button'>
-                <button className='face__confirm' onClick={handleModal}>
+                <button className='face__confirm' onClick={()=>{handleModal(); takePhoto()}}>
                     Vérifier ma présence
                 </button>
                 <button className='face__close' onClick={()=>close()}>
@@ -69,10 +78,13 @@ function Faciale() {
             <Modal isActive={confirm} 
                 handleModal={handleModal}
                 title="Resultat du traitement">
-                    <span>Cette étudiant sera marqué présent à cette evenement</span>
+                    <img src={photo} className='image__result'/>
                     <div className='presence__confirm'>
-                        <Button title='Confirmer' />
-                        <Button title='Refuser'/>
+                        <Button title='Confirmer' onClickButton={goPresence}/>
+                        <div onClick={()=>handleModal()}>
+                           <Button title='Refuser'/>
+                        </div>
+                            
                     </div>
             </Modal>
         </div>
