@@ -8,3 +8,55 @@
     align-self: flex-start;
     margin-right: 80%;
 }
+.create__place{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.place__champ{
+    width: 100%;
+    height: 100%;
+    background-color: #0563af;
+    color: white;
+    padding: 1% 10% 1% 5%;
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.newPlace__button{
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    line-height: 2;
+    border-radius: 4px;
+    padding-left: 25px;
+    padding-right: 25px;
+    letter-spacing: 1px;
+    background-color: #0e1e53;
+    color: #ffeba7;
+    box-shadow: 0 12px 35px 0 rgba(16,39,112,.25);
+}
+.create__newPlace{
+    opacity: 0;
+    display: none;
+}
+.active__newPlace{
+    opacity: 1;
+    display: inline;
+}
+.date__end,
+.date__start{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-between;
+}

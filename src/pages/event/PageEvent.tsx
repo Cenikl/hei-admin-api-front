@@ -4,22 +4,39 @@ import EventCard from '../../components/container/EventCard'
 import { eventPropType } from '../../type'
 import Modal from '../../components/modal/Modal'
 import Pagination from '../../components/pagination/Pagination'
+import Button from '../../components/button/Button'
+import { useNavigate } from 'react-router-dom'
+import { useDataProvider } from '../../context/ApiContext'
+import Input1 from '../../components/input/Input1'
+import Select from '../../components/select/Select'
 
 const PageEvent: FC<Partial<eventPropType>> = (props) => {
+    const { idEventChoose } = useDataProvider()
     const {type, element} = props
-    const [indexToShow, setIndexToShow] = useState<number>(0)
     const [showDetails, setShowDetails] = useState<boolean>(false);
+    const { changeIdEventChoose } = useDataProvider();
     const handleEventDetails = () => {
         setShowDetails(!showDetails)
+    }
+    const navigate = useNavigate();
+    const goPresence = () => {
+        navigate('/faciale')
+    }
+    const viewParticipant = () => {
+        navigate('/eventparticipant')
     }
 
     return (
         <div className='eventpage__container'>
             <Modal isActive={showDetails}
                 handleModal={handleEventDetails}
-                title={`Details de l'événement choisi ${indexToShow}`}
+                title={`Details de l'événement choisi`}
                 >
-                    hello
+                <div>
+                      
+                    <Button title='Participant' onClickButton={viewParticipant}/>
+                    <Button title='Présence' onClickButton={goPresence}/>
+                </div>
             </Modal>
             <div className='eventpage__type'>
                 {type}
@@ -27,7 +44,7 @@ const PageEvent: FC<Partial<eventPropType>> = (props) => {
             <div className='eventpage__element'>
                 {element && element.map((element, index)=>(
                     <div key={'evt'+index} 
-                        onClick={()=>{setIndexToShow(index); handleEventDetails()}}
+                        onClick={()=>{changeIdEventChoose(index); handleEventDetails()}}
                         className="click">
                             <EventCard title={element!.title}
                             description={element!.description}
@@ -37,9 +54,6 @@ const PageEvent: FC<Partial<eventPropType>> = (props) => {
                             image={element!.image}/>
                     </div>
                 ))}
-            </div>
-            <div className='eventpage__pagination'>
-                <Pagination/>
             </div>
         </div>
     )

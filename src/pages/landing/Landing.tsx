@@ -17,12 +17,6 @@ function Landing() {
                     onClick={()=>setActive("event")}>
                     Evénement
                 </div>
-                {(userRole!.toLocaleLowerCase() == 'manager' || userRole!.toLocaleLowerCase() == 'teacher') &&
-                    <div className={`nav__presence ${active == "presence" && "nav__active"}`} 
-                        onClick={()=>navigate("/presence")}>
-                        Présence
-                    </div>
-                }
                 <button className='nav__logout'>Se déconnecter</button>
             </div>
             <Event/>

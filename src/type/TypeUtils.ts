@@ -5,7 +5,9 @@ export type GlobalContent = {
     userRole?: string,
     client?: AxiosInstance,
     allUser?: userType[] | null,
-    getUsers?: (value: string) => void
+    getUsers?: (value: string) => void,
+    idEventChoose?: number,
+    changeIdEventChoose: (value: number) =>void,
 }
 
 export type modalPropType = {
@@ -13,6 +15,11 @@ export type modalPropType = {
     isActive: boolean,
     title: string,
     handleModal: ()=>void
+}
+
+export type placeType = {
+    id: string,
+    place_name: string
 }
 
 export type buttonPropType = {
@@ -69,7 +76,7 @@ export type userType = {
     phone: string,
     email: string,
     entrance_datetime: string,
-    status: string
+    status: string,
 }
 
 export type searchPropType = {
@@ -81,6 +88,7 @@ export type searchPropType = {
 }
 
 export type event = {
+    idEvent: string,
     title: string,
     description: string,
     place: string, 

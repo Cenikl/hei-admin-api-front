@@ -7,13 +7,16 @@ import { userType } from '../type/TypeUtils';
         userRole: '', 
         client: axios.create(),
         allUser: [],
+        idEventChoose: 0,
+        changeIdEventChoose: (value: number)=>{},
     });
 
     export const useDataProvider = () => useContext(DataContext);
 
     export const DataProvider = ({ children }: any) => {
         const [allUser, setAllUser] = useState<userType[] | null>(null);
-        const userRole = "STUDENT";
+        const [idEventChoose, setIdEventChoose] = useState<number>(0)
+        const userRole = "MANAGER";
         const client:AxiosInstance = axios.create({
             baseURL: "http://localhost:8080"
         })
@@ -22,11 +25,16 @@ import { userType } from '../type/TypeUtils';
                 setAllUser(response.data)
             })
         }
+        const changeIdEventChoose = (value: number) => {
+            setIdEventChoose(value)
+        }
         const contextValue = {
             userRole,
             client,
             allUser,
-            getUsers
+            getUsers,
+            idEventChoose,
+            changeIdEventChoose
         };
 
         return (

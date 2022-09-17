@@ -8,21 +8,23 @@ const Input: FC<Partial<selectPropType>> = (props) => {
 
     return (
         <>
-            <div className='select__label'>{label}</div>
-            <select onChange={(e)=>{{collect && collect(e.target.value)}}} 
-                className="select__element"
-                >
-                {available && 
-                    available.map((element)=>(
-                        <option value={element} 
-                                key={element}
-                                selected={(defaultValue === element && true)}
-                                >
-                            {element}
-                        </option>
-                    ))
-                }
-            </select>
+            <div>
+                <div className='select__label'>{label}</div>
+                <select onChange={(e)=>{{collect && collect(e.target.value)}}} 
+                    className="select__element"
+                    >
+                    {available && 
+                        available.map((element)=>(
+                            <option value={element} 
+                                    key={element}
+                                    selected={(defaultValue === element && true)}
+                                    >
+                                {element}
+                            </option>
+                        ))
+                    }
+                </select>
+            </div>
         </>
     )
 }

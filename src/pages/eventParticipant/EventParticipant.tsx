@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './EventParticipant.css'
 import Modal from '../../components/modal/Modal'
 import Pagination from '../../components/pagination/Pagination'
@@ -9,9 +9,10 @@ import { userType, eventParticipant } from '../../type/TypeUtils';
 interface Props {}
 
 const EventParticipant: React.FC = (props: Props) => {
-    const { client, allUser } = useDataProvider();
+    const { client, allUser, idEventChoose } = useDataProvider();
     const [participantList, setParticipantList] = useState<eventParticipant[] | null>([{
         "event":{
+            "idEvent":"EVT-1",
             "title":"Hackathon",
             "description": "ok pour hackathon",
             "place":"HEI Ivandry",
@@ -35,12 +36,19 @@ const EventParticipant: React.FC = (props: Props) => {
             "status": "ENABLED"
         },
         "status":"Missing"}])
-    const {} = props
     const [showParticipantDetails, setShowParticipantDetails] = useState<boolean>(false)
     const handleDetails = () => {
         setShowParticipantDetails(!showParticipantDetails)
     }
-    const change = (key:string, value: string) => {}
+    const getParticipant = () => {
+        client!.get(`/eventparticipants/${idEventChoose}`)
+            .then((response)=>{
+                setParticipantList(response.data)
+            })
+    }
+    useEffect(()=>{
+        getParticipant()
+    }, [idEventChoose])
 
     return (
         <div className='eventp__container'>

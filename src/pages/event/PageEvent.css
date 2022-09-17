@@ -14,8 +14,8 @@
 .eventpage__element{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     border-radius:10px;
-    overflow: scroll;
     width: 100%;
     background-color: gray;
 }
