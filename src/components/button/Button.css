@@ -1,0 +1,37 @@
+.button{
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 2;
+    height: 50px;
+    transition: all 200ms linear;
+    border-radius: 4px;
+    padding-left: 25px;
+    padding-right: 25px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-self: flex-start;
+    cursor: pointex r;
+    background-color: #0e1e53;
+    color: #ffeba7;
+    box-shadow: 0 12px 35px 0 rgba(16,39,112,.25);
+    margin: 5px;
+    cursor: pointer;
+}
+.button:hover,
+.outline:hover{
+    background-color: #0e1e53;
+}
+
+.outline:hover{
+    border: 2px solid #102670;
+    color: white;
+}
+.presence__confirm{
+    display: flex;
+    flex-direction: row;
+}
