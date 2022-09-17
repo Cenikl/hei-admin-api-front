@@ -1,0 +1,50 @@
+.navbar__container{
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: rgb(211, 152, 4);
+    padding: 1%;
+}
+.nav__presence,
+.nav__event{
+    position: relative;
+    cursor: pointer;
+    font-weight: bold;
+}
+.nav__active::after,
+.nav__presence:hover::after,
+.nav__event:hover::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: 90%;
+    left: 0;
+    height: 3px;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 0px 0px 5px 5px;
+    animation: hover 1s 1;
+    transition: all 1s ease;
+}
+
+.nav__logout{
+    outline: unset;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+@keyframes hover {
+    from{
+        width: 0;
+        left: 50%;
+    }
+    to{
+        width: 100%;
+        left: 0;
+    }
+}

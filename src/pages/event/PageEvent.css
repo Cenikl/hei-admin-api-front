@@ -1,0 +1,37 @@
+.eventpage__container{
+    display: flex;
+    margin: 15px;
+    flex-direction: column;
+    position: relative;
+    margin-top: 5   0px;
+}
+.eventpage__type{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+.eventpage__element{
+    display: flex;
+    flex-direction: row;
+    border-radius:10px;
+    overflow: scroll;
+    width: 100%;
+    background-color: gray;
+}
+.click{
+    cursor: pointer;
+}
+.event__button{
+    display: flex;
+    flex-direction: row;
+}
+.option__event{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+.eventpage__pagination{
+    width: 20%;   
+}

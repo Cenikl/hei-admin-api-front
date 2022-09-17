@@ -1,0 +1,51 @@
+canvas{
+    display: none;
+}
+.face__container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+.face__camera{
+    min-width: 50%;
+}
+.face__button{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    align-self: flex-end;
+    margin-bottom: 70px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.face__confirm{
+    outline: unset;
+    border: 0.5px solid red;
+    color: #ffffff;
+    background-color: rgb(209, 14, 14);
+    transition: background 0.5s ease-out;
+    padding: 10px;
+}
+.face__confirm:hover{
+    background-color: rgb(156, 23, 23);
+    transition: background 0.5s ease-out;
+}
+.face__close{
+    outline: unset;
+    background: none;
+    color: gold;
+    border: 0.5px solid gold;
+    transition: background 0.5s ease-out;
+    padding: 10px;
+    margin-left: 10px;
+}
+.face__close:hover{
+    background: orange;
+    color: #ffffff;
+    transition: background 0.5s ease-out;
+}
