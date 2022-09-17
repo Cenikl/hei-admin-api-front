@@ -10,6 +10,11 @@
     background-color: rgb(211, 152, 4);
     padding: 1%;
 }
+.nav__logout{
+    outline: 0;
+    border: none;
+    border-radius: 4px;
+}
 .nav__presence,
 .nav__event{
     position: relative;

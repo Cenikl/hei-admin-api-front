@@ -135,7 +135,7 @@ function Event() {
             </Modal>
             <div className='option__event'>
                 {(userRole!.toLocaleLowerCase() == 'manager'|| userRole!.toLocaleLowerCase() == 'teacher')  &&
-                    <button className='ici' onClick={handleCreateEvent}>
+                    <button className='ici nav__logout' onClick={handleCreateEvent}>
                       Créer un événement
                     </button>
                 }
